@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets & theming ── */
+:root {
+  color-scheme: dark;
+  --bg-base:        #050505;
+  --bg-surface:     rgba(255, 255, 255, 0.02);
+  --bg-elevated:    rgba(255, 255, 255, 0.04);
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+  --brand:          #6366f1;
+  --brand-light:    #818cf8;
+  --text-primary:   rgba(255, 255, 255, 0.90);
+  --text-secondary: rgba(255, 255, 255, 0.50);
+  --text-muted:     rgba(255, 255, 255, 0.25);
+}
+
+html, body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar        { width: 4px; height: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(255, 255, 255, 0.08); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ── Range input track ── */
+input[type="range"] { -webkit-appearance: none; appearance: none; }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #facc15;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* ── Select appearance fix for dark mode ── */
+select option {
+  background: #0f0f14;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Focus visible outline ── */
+*:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ── Smooth scroll ── */
+html { scroll-behavior: smooth; }
+
+/* ── Glass blur utility ── */
+.glass {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Code font utility ── */
+.font-mono { font-family: 'JetBrains Mono', monospace !important; }
+.font-syne { font-family: 'Syne', sans-serif !important; }
